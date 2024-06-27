@@ -58,12 +58,14 @@
 
 	<ItemGroup>
 	  <Compile Remove="Database.xaml.cs" />
+	  <Compile Remove="DatabsePage.xaml.cs" />
 	  <Compile Remove="NewPage1.xaml.cs" />
 	  <Compile Remove="Summary.xaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Remove="Database.xaml" />
+	  <MauiXaml Remove="DatabsePage.xaml" />
 	  <MauiXaml Remove="NewPage1.xaml" />
 	  <MauiXaml Remove="Summary.xaml" />
 	</ItemGroup>
@@ -75,7 +77,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="DatabsePage.xaml">
+	  <MauiXaml Update="DatabasePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SettingsPage.xaml">

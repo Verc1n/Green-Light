@@ -4,7 +4,19 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Green_Light"
-    Title="Green_Light">
+    Title="Green_Light"
+    FlyoutWidth="200">
+    
+    
+    
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="DarkGreen" Padding="10">
+            <Label Text="Green Light"
+                   FontSize="30"
+                   VerticalOptions="CenterAndExpand"
+                   />
+        </Grid>
+    </Shell.FlyoutHeader>
 
     <FlyoutItem Title="Home">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
@@ -15,9 +27,9 @@
     </FlyoutItem>
 
     <FlyoutItem Title="Database">
-        <ShellContent ContentTemplate="{DataTemplate local:SummaryPage}"/>
+        <ShellContent ContentTemplate="{DataTemplate local:DatabasePage}"/>
     </FlyoutItem>
-    
+
     <FlyoutItem Title="Settings">
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
