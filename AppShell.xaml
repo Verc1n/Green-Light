@@ -10,7 +10,7 @@
     
     
     <Shell.FlyoutHeader>
-        <Grid BackgroundColor="DarkGreen" Padding="10">
+        <Grid BackgroundColor="DarkGreen" Padding="10">  
             <Label Text="Green Light"
                    FontSize="30"
                    VerticalOptions="CenterAndExpand"
@@ -18,19 +18,23 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Home">
+    <FlyoutItem Title="Home"
+                Icon="placeholder_graphic.png">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Summary">
+    <FlyoutItem Title="Summary"
+                Icon="placeholder_graphic.png">
         <ShellContent ContentTemplate="{DataTemplate local:SummaryPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Database">
+    <FlyoutItem Title="Database"
+                Icon="placeholder_graphic.png">
         <ShellContent ContentTemplate="{DataTemplate local:DatabasePage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Settings">
+    <FlyoutItem Title="Settings"
+                Icon="placeholder_graphic.png">
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
 
