@@ -6,8 +6,7 @@
     xmlns:local="clr-namespace:Green_Light"
     Title="Green_Light"
     FlyoutWidth="200">
-    
-    
+
     
     <Shell.FlyoutHeader>
         <Grid BackgroundColor="DarkGreen" Padding="10">  

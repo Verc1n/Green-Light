@@ -3,23 +3,86 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Green_Light.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="placeholder_graphic.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+    <Grid RowDefinitions="*,*,*,2*,6*,*"
+        ColumnDefinitions="*,*,*"
+        RowSpacing="5"
+        ColumnSpacing="5">
 
-            <Label
-                Text="Hello, World! I am Ryan"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1"
-                FontFamily="LatoWeb-Regular"
-                />
-        </VerticalStackLayout>
-    </ScrollView>
+        <Label Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Text="107 hours"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="40"/>
+
+        <Image Grid.Row="0"
+            Grid.Column="3"
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Label Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Text="12 hours"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="40"/>
+
+        <Image Grid.Row="1"
+            Grid.Column="3"
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Label Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Text="Recomended Drives:"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="40"/>
+
+        <Image Grid.Row="3"
+            Grid.Column="0"
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Image Grid.Row="3"
+            Grid.Column="1"
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Image Grid.Row="3"
+            Grid.Column="2"
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Image Grid.Row="4"
+            Grid.ColumnSpan="3"
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Label Grid.Row="5"
+            Grid.Column="0"
+            Text="Supervisor"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Image Grid.Row="5"
+            Grid.Column="1"
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Image Grid.Row="5"
+            Grid.Column="2"
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+    </Grid>
 
 </ContentPage>
