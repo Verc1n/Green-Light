@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Green_Light.MainPage">
 
-    <Grid RowDefinitions="*,*,*,2*,6*,*"
+    <Grid RowDefinitions="*,*,*,2*,6*"
         ColumnDefinitions="*,*,*"
         RowSpacing="5"
-        ColumnSpacing="5">
+        ColumnSpacing="5"
+        Padding="5">
 
         <Label Grid.Row="0"
             Grid.ColumnSpan="2"
@@ -61,24 +62,6 @@
 
         <Image Grid.Row="4"
             Grid.ColumnSpan="3"
-            Source="placeholder_graphic.png"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"/>
-
-        <Label Grid.Row="5"
-            Grid.Column="0"
-            Text="Supervisor"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"/>
-
-        <Image Grid.Row="5"
-            Grid.Column="1"
-            Source="placeholder_graphic.png"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"/>
-
-        <Image Grid.Row="5"
-            Grid.Column="2"
             Source="placeholder_graphic.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>

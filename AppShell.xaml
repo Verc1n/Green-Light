@@ -7,6 +7,23 @@
     Title="Green_Light"
     FlyoutWidth="200">
 
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="2*,*"
+              BackgroundColor="DarkGreen"
+              Padding="5">
+            
+            <Label Text="Supervisor"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="20"/>
+
+            <Image Grid.Column="1"
+                   Source="placeholder_graphic.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            
+        </Grid>
+    </Shell.TitleView>
     
     <Shell.FlyoutHeader>
         <Grid BackgroundColor="DarkGreen" Padding="10">  
