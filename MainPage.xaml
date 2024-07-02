@@ -35,6 +35,11 @@
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
 
+        <Line Grid.Row="2"
+              Grid.ColumnSpan="3"
+              X2="400"              
+              Stroke="Black"/>
+
         <Label Grid.Row="2"
             Grid.ColumnSpan="3"
             Text="Recomended Drives:"
@@ -59,6 +64,11 @@
             Source="placeholder_graphic.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
+
+        <Line Grid.Row="4"
+              Grid.ColumnSpan="3"
+              X2="400"              
+              Stroke="Black"/>
 
         <Image Grid.Row="4"
             Grid.ColumnSpan="3"

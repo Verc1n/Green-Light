@@ -3,4 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Green_Light.ConditionsPage"
              Title="ConditionsPage">
+    <VerticalStackLayout>
+        <Label Text="0h 40min"
+               FontSize="40"
+               HeightRequest="50"
+               WidthRequest="300"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               />
+        <Line X2="400"              
+              Stroke="Black"/>
+
+        <ScrollView>
+            
+        </ScrollView>
+    </VerticalStackLayout>
 </ContentPage>
