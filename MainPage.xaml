@@ -37,7 +37,7 @@
 
         <Line Grid.Row="2"
               Grid.ColumnSpan="3"
-              X2="400"              
+              X2="10000"
               Stroke="Black"/>
 
         <Label Grid.Row="2"
@@ -67,7 +67,7 @@
 
         <Line Grid.Row="4"
               Grid.ColumnSpan="3"
-              X2="400"              
+              X2="10000"              
               Stroke="Black"/>
 
         <Image Grid.Row="4"
