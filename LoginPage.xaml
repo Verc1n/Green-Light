@@ -1,7 +1,12 @@
+Uses the custom package 'PIN Codes Authorisation MAUI' by Wellison Arley.
+Available from https://github.com/welissonArley/Packages.MAUI/tree/master/src/MauiCodes.
+    
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Green_Light.LoginPage"
-             Title="LoginPage">
+<codePage:CodePage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:codePage="clr-namespace:MauiCodes.Views.Pages;assembly=PinCodes.Authorization.Maui"
+    x:Class="MAUI.App.Views.LoginPage"
+    CallbackCodeFinished="{Binding UserEndTheCodeCommand}">
 
-</ContentPage>
+</codePage:CodePage>
