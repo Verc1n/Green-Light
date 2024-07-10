@@ -11,7 +11,6 @@
             Routing.RegisterRoute(nameof(SummaryPage), typeof(SummaryPage));
             Routing.RegisterRoute(nameof(DatabasePage), typeof(DatabasePage));
             Routing.RegisterRoute(nameof(ConditionsPage), typeof(ConditionsPage));
-            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         }
     }
 }
