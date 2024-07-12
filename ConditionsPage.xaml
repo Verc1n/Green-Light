@@ -3,19 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Green_Light.ConditionsPage"
              Title="ConditionsPage">
-    <VerticalStackLayout>
-        <Label Text="0h 40min"
-               FontSize="40"
-               HeightRequest="50"
-               WidthRequest="300"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               />
-        <Line X2="400"              
-              Stroke="Black"/>
+    <Grid RowDefinitions="*,*,5*"
+          ColumnDefinitions="3*,2*">
+        
+        <Label  Grid.ColumnSpan="2"
+                Text="0h 40min"
+                FontSize="40"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
 
-        <ScrollView>
+        <Line Grid.Row="1"
+              Grid.ColumnSpan="5"
+              X2="400"              
+              Stroke="Black"
+              />
+
+        <Label Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Supervisor:"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    />
+
+        <Picker Grid.Row="1"
+                     Grid.Column="1"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     FontSize="30">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Mum</x:String>
+                    <x:String>Dad</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+            <Picker.SelectedItem>0</Picker.SelectedItem>
+        </Picker>
+
+        <TableView Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   Intent="Menu">
+
+
             
-        </ScrollView>
-    </VerticalStackLayout>
+        </TableView>
+
+    </Grid>
 </ContentPage>
