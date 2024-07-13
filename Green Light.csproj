@@ -57,6 +57,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="NewFolder\**" />
+	  <Compile Remove="NewFolder\**" />
+	  <EmbeddedResource Remove="NewFolder\**" />
+	  <MauiCss Remove="NewFolder\**" />
+	  <MauiXaml Remove="NewFolder\**" />
+	  <None Remove="NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Remove="Database.xaml.cs" />
 	  <Compile Remove="DatabsePage.xaml.cs" />
 	  <Compile Remove="NewPage1.xaml.cs" />
@@ -91,11 +100,6 @@
 	  <MauiXaml Update="SummaryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="NewFolder\" />
-	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
 </Project>

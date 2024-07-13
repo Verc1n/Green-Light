@@ -15,7 +15,7 @@
 
         <Line Grid.Row="1"
               Grid.ColumnSpan="5"
-              X2="400"              
+              X2="10000"              
               Stroke="Black"
               />
 
@@ -41,13 +41,34 @@
             <Picker.SelectedItem>0</Picker.SelectedItem>
         </Picker>
 
-        <TableView Grid.Row="3"
-                   Grid.ColumnSpan="2"
-                   Intent="Menu">
-
-
+        <CollectionView x:Name="collectionView"
+                        ItemsSource="{Binding clnDriveConditions}"
+                        SelectionMode="Multiple"
+                        SelectedItems="{Binding clnSelectedDriveConditionsB}"
+                        ItemsLayout="VerticalGrid, 4"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2">
             
-        </TableView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="3*,*"
+                          Padding="5"
+                          RowSpacing="5"
+                          ColumnSpacing="5"
+                          >
 
+                        <Image Grid.Row="0"
+                               Source="{Binding strImageURL}"
+                               Aspect="AspectFill"
+                               />
+
+                        <Label Grid.Row="1"
+                               Text="{Binding strName}"
+                               />
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 </ContentPage>

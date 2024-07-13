@@ -4,5 +4,6 @@
     {
         public string strName { get; set; }
         public string strImageURL { get; set; }
+        public string strCategory { get; set; }
     }
 }
