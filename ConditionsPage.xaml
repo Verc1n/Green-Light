@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Green_Light.ConditionsPage"
              Title="ConditionsPage">
-    <Grid RowDefinitions="*,*,5*"
+    <Grid RowDefinitions="*,*,4*"
           ColumnDefinitions="3*,2*">
         
         <Label  Grid.ColumnSpan="2"
@@ -41,6 +41,12 @@
             <Picker.SelectedItem>0</Picker.SelectedItem>
         </Picker>
 
+        <Line Grid.Row="2"
+              Grid.ColumnSpan="2"
+              X2="10000"              
+              Stroke="Black"
+              />
+
         <CollectionView x:Name="collectionView"
                         ItemsSource="{Binding clnDriveConditions}"
                         SelectionMode="Multiple"
@@ -51,7 +57,7 @@
             
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid RowDefinitions="3*,*"
+                    <Grid RowDefinitions="2*,*"
                           Padding="5"
                           RowSpacing="5"
                           ColumnSpacing="5"
@@ -70,5 +76,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
     </Grid>
 </ContentPage>
