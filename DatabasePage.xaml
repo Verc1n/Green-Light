@@ -36,9 +36,33 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        
-        <Picker Grid.Row=""
 
+        <Picker Grid.Row="1"
+                Grid.Column="0"
+                FontSize="30"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Date</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Picker Grid.Row="1"
+                Grid.Column="1"
+                FontSize="30"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Oldest to Newest</x:String>
+                    <x:String>Newest to Oldest</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
     </Grid>
-          
+
 </ContentPage>
