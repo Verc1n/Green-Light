@@ -57,6 +57,7 @@ namespace Green_Light.ViewModels
 
         public ICommand DriveConditionSelectionChangedCommand => new Command(DriveConditionSelectionChanged);
 
+
         public DriveConditionsViewModel()
         {
             lstSource = new List<DriveCondition>();
@@ -75,58 +76,135 @@ namespace Green_Light.ViewModels
         {
             lstSource.Add(new DriveCondition
             {
-                strName = "Test",
+                strName = "Parallel Parking",
+                strImageURL = "placeholder_graphic.png",
+                strCategory = "Parking",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
+            });
+
+            lstSource.Add(new DriveCondition
+            {
+                strName = "Vertical Parking",
+                strImageURL = "placeholder_graphic.png",
+                strCategory = "Parking",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
+            });
+
+            lstSource.Add(new DriveCondition
+            {
+                strName = "Diagonal Parking",
                 strImageURL = "placeholder_graphic.png",
                 strCategory = "Parking"
             });
 
             lstSource.Add(new DriveCondition
             {
-                strName = "Test",
+                strName = "No Rain",
                 strImageURL = "placeholder_graphic.png",
-                strCategory = "Parking"
+                strCategory = "Weather",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
             });
 
             lstSource.Add(new DriveCondition
             {
-                strName = "Test",
+                strName = "Light Rain",
                 strImageURL = "placeholder_graphic.png",
-                strCategory = "Parking"
+                strCategory = "Weather",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
             });
 
             lstSource.Add(new DriveCondition
             {
-                strName = "Test",
+                strName = "Moderate Rain",
                 strImageURL = "placeholder_graphic.png",
-                strCategory = "Parking"
+                strCategory = "Weather",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
             });
 
             lstSource.Add(new DriveCondition
             {
-                strName = "Test",
+                strName = "Heavy Rain",
                 strImageURL = "placeholder_graphic.png",
-                strCategory = "Parking"
+                strCategory = "Weather",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
             });
 
             lstSource.Add(new DriveCondition
             {
-                strName = "Test",
+                strName = "Local Roads",
                 strImageURL = "placeholder_graphic.png",
-                strCategory = "Parking"
+                strCategory = "Roads",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
             });
 
             lstSource.Add(new DriveCondition
             {
-                strName = "Test",
+                strName = "Rural Roads",
                 strImageURL = "placeholder_graphic.png",
-                strCategory = "Parking"
+                strCategory = "Roads",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
             });
 
             lstSource.Add(new DriveCondition
             {
-                strName = "Test",
+                strName = "City Roads",
                 strImageURL = "placeholder_graphic.png",
-                strCategory = "Parking"
+                strCategory = "Roads",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
+            });
+
+            lstSource.Add(new DriveCondition
+            {
+                strName = "Highways",
+                strImageURL = "placeholder_graphic.png",
+                strCategory = "Roads",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
+            });
+
+            lstSource.Add(new DriveCondition
+            {
+                strName = "No Traffic",
+                strImageURL = "placeholder_graphic.png",
+                strCategory = "Traffic",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
+            });
+
+            lstSource.Add(new DriveCondition
+            {
+                strName = "Light Traffic",
+                strImageURL = "placeholder_graphic.png",
+                strCategory = "Traffic",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
+            });
+
+            lstSource.Add(new DriveCondition
+            {
+                strName = "Moderate Traffic",
+                strImageURL = "placeholder_graphic.png",
+                strCategory = "Traffic",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
+            });
+
+            lstSource.Add(new DriveCondition
+            {
+                strName = "Heavy Traffic",
+                strImageURL = "placeholder_graphic.png",
+                strCategory = "Traffic",
+                dtmDateLastSelected = DateTime.Now,
+                intTimesSelected = 0
             });
 
             clnDriveConditions = new ObservableCollection<DriveCondition>(lstSource);

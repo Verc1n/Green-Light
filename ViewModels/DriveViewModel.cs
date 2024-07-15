@@ -4,10 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Green_Light.Models;
+using Green_Light.ViewModels;
 
 namespace Green_Light.ViewModels
 {
     class DriveViewModel
     {
+        readonly IList<Drive> lstSource;
+        public DriveViewModel()
+        {
+            lstSource = new List<Drive>();
+            CreateDrive();
+        }
+        void CreateDrive()
+        {
+            lstSource.Add(new Drive
+            {
+                cdnDriveConditions = []
+            });
+        }
     }
 }
