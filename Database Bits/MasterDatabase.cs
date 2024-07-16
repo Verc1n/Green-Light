@@ -8,11 +8,11 @@ using Green_Light.Models;
 
 namespace Green_Light.Database_Bits
 {
-    public class DriveConditionDatabase
+    public class MasterDatabase
     {
         SQLiteAsyncConnection Database;
 
-        public DriveConditionDatabase()
+        public MasterDatabase()
         {
         }
 
@@ -25,6 +25,16 @@ namespace Green_Light.Database_Bits
             var result = await Database.CreateTableAsync<DriveCondition>();
         }
 
-        public AsyncTableQuery Task<>
+        public async Task<List<DriveCondition>> GetConditionsAsync()
+        {
+            await Init();
+            return await Database.Table<DriveCondition>().ToListAsync();
+        }
+
+        public async Task<int> SaveConditionAsync(DriveCondition condition)
+        {
+            await Init();
+            return await Database.UpdateAsync(condition);
+        }       
     }
 }
