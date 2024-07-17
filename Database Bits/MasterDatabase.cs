@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 using Green_Light.Models;
+using System.Diagnostics;
 
 namespace Green_Light.Database_Bits
 {
@@ -12,39 +13,7 @@ namespace Green_Light.Database_Bits
     {
         SQLiteAsyncConnection Database;
 
-        public MasterDatabase()
-        {
-        }
-
-        async Task Init()
-        {
-            if (Database is not null)
-                return;
-
-            Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
-            var result = await Database.CreateTableAsync<DriveCondition>();
-           
-        }
-
-        public async Task<List<DriveCondition>> GetConditionsAsync()
-        {
-            await Init();
-            return await Database.Table<DriveCondition>().ToListAsync();
-        }
-
-        public async Task<int> SaveConditionAsync(DriveCondition condition)
-        {
-            await Init();
-            return await Database.UpdateAsync(condition);
-        }    
-        
-        static async Task InitialiseDatabaseWithDefaults(MasterDatabase db)
-        {
-            var condition = await db.GetConditionsAsync();
-
-            if (condition.Count == 0)
-            {
-                DriveCondition[] lstSource = {
+        DriveCondition[] lstConditionsSource = {
                 new DriveCondition
                 {
                     strName = "Parallel Parking",
@@ -178,11 +147,41 @@ namespace Green_Light.Database_Bits
                     intTimesSelected = 0
                 }};
 
-                foreach (DriveCondition defaultcondition in lstSource)
+        public MasterDatabase()
+        {
+        }
+
+        public async Task Init()
+        {
+            Debug.WriteLine("Init working");
+            if (Database is not null)
+                return;
+
+            Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
+            await Database.CreateTableAsync<DriveCondition>();
+
+            int count = await Database.Table<DriveCondition>().CountAsync() ;
+            if(count==0)
+            {
+                foreach (DriveCondition condition in lstConditionsSource)
                 {
-                    await db.SaveConditionAsync(defaultcondition);
+                    await Database.InsertAsync(condition);
                 }
             }
+            
         }
+
+        public async Task<List<DriveCondition>> GetConditionsAsync()
+        {
+            Debug.WriteLine("First func woking");
+            await Init();
+            return await Database.Table<DriveCondition>().ToListAsync();
+        }
+
+        public async Task<int> SaveConditionAsync(DriveCondition condition)
+        {
+            await Init();
+            return await Database.UpdateAsync(condition);
+        }                          
     }
 }

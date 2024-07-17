@@ -8,7 +8,7 @@ public partial class ConditionsPage : ContentPage
 	public ConditionsPage()
 	{
 		InitializeComponent();
-		BindingContext = new DriveConditionsViewModel();
-		//BindingContext = new DriveConditionsDatabaseAccessViewModel(database);
+		//BindingContext = new DriveConditionsViewModel();
+		BindingContext = new DriveConditionsDatabaseAccessViewModel();
 	}
 }
