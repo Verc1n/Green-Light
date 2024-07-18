@@ -4,7 +4,6 @@ namespace Green_Light;
 
 public partial class ConditionsPage : ContentPage
 {
-	MasterDatabase database;
 	public ConditionsPage()
 	{
 		InitializeComponent();
