@@ -153,15 +153,14 @@ namespace Green_Light.Database_Bits
 
         public async Task Init()
         {
-            Debug.WriteLine("Init working");
             if (Database is not null)
             {
-                Debug.WriteLine("1");
                 return;
             }
-            Debug.WriteLine("1.5");            
             Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
+            Debug.WriteLine("1");
             await Database.CreateTableAsync<DriveCondition>();
+              
             Debug.WriteLine("2");
 
             int count = await Database.Table<DriveCondition>().CountAsync() ;

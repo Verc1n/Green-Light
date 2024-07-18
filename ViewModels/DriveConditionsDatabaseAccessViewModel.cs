@@ -22,7 +22,7 @@ namespace Green_Light.ViewModels
                 if (_MasterDatabase == null)
                 {
                     _MasterDatabase = new MasterDatabase();
-                    _MasterDatabase.Init().Wait();
+                    _MasterDatabase.Init();
                 }
                 return _MasterDatabase;
             }
