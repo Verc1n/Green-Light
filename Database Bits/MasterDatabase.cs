@@ -155,20 +155,25 @@ namespace Green_Light.Database_Bits
         {
             Debug.WriteLine("Init working");
             if (Database is not null)
+            {
+                Debug.WriteLine("1");
                 return;
-
+            }
+            Debug.WriteLine("1.5");            
             Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
             await Database.CreateTableAsync<DriveCondition>();
+            Debug.WriteLine("2");
 
             int count = await Database.Table<DriveCondition>().CountAsync() ;
             if(count==0)
             {
+                Debug.WriteLine("3");
                 foreach (DriveCondition condition in lstConditionsSource)
                 {
                     await Database.InsertAsync(condition);
                 }
-            }
-            
+                Debug.WriteLine("4");
+            }            
         }
 
         public async Task<List<DriveCondition>> GetConditionsAsync()

@@ -8,7 +8,7 @@ namespace Green_Light.Models
 {
     class DatabaseConstants
     {
-        public const string strFileName = "DriveConditions.db3";
+        public const string strFileName = "MasterDatabase.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
             SQLite.SQLiteOpenFlags.ReadWrite |
