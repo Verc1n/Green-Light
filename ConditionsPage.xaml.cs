@@ -6,8 +6,8 @@ public partial class ConditionsPage : ContentPage
 {
 	public ConditionsPage()
 	{
+		MasterDatabase masterDatabase = new MasterDatabase();
 		InitializeComponent();
-		//BindingContext = new DriveConditionsViewModel();
-		BindingContext = new DriveConditionsDatabaseAccessViewModel();
+		BindingContext = new DriveConditionsViewModel(masterDatabase);
 	}
 }

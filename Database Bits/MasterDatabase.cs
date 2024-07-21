@@ -14,9 +14,8 @@ namespace Green_Light.Database_Bits
     {
         SQLiteAsyncConnection Database;
 
-        DriveCondition[] lstConditionsSource = {
-                new DriveCondition
-                {
+        readonly DriveCondition[] lstConditionsSource = [
+                new DriveCondition {
                     strName = "Parallel Parking",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Parking",
@@ -148,7 +147,7 @@ namespace Green_Light.Database_Bits
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
-                }};
+                }];
 
         public MasterDatabase()
         {
@@ -161,9 +160,7 @@ namespace Green_Light.Database_Bits
                 return;
             }
             Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
-            Database.CreateTableAsync<DriveCondition>().Wait();
-              
-
+            Database.CreateTableAsync<DriveCondition>().Wait();              
 
             int count = Database.Table<DriveCondition>().CountAsync().GetAwaiter().GetResult();
             if(count==0)
@@ -174,6 +171,16 @@ namespace Green_Light.Database_Bits
                     Database.InsertAsync(condition).Wait();
                 }
             }
+        }
+        static MasterDatabase _MasterDatabase;
+        public async Task<MasterDatabase> GetDatabase()
+        {
+            if (_MasterDatabase == null)
+            {
+                _MasterDatabase = new MasterDatabase();
+                await _MasterDatabase.Init();
+            }
+            return _MasterDatabase;
         }
 
         public async Task<List<DriveCondition>> GetConditionsAsync()
