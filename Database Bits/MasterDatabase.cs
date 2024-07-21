@@ -152,7 +152,7 @@ namespace Green_Light.Database_Bits
         public MasterDatabase()
         {
         }
-
+                
         public async Task Init()
         {
             if (Database is not null)
@@ -160,7 +160,7 @@ namespace Green_Light.Database_Bits
                 return;
             }
             Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
-            Database.CreateTableAsync<DriveCondition>().Wait();              
+            Database.CreateTablesAsync<DriveCondition, Account>().Wait();
 
             int count = Database.Table<DriveCondition>().CountAsync().GetAwaiter().GetResult();
             if(count==0)
@@ -172,6 +172,7 @@ namespace Green_Light.Database_Bits
                 }
             }
         }
+
         static MasterDatabase _MasterDatabase;
         public async Task<MasterDatabase> GetDatabase()
         {
