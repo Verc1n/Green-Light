@@ -18,7 +18,7 @@ namespace Green_Light.ViewModels
         public DriveViewModel(MasterDatabase masterDatabase)
         {
             masterdatabase = masterDatabase.GetDatabase().GetAwaiter().GetResult();
-            clnDrives = new ObservableCollection<Drive>(masterdatabase.GetDrivesAsync().GetAwaiter.GetResult());
+            //clnDrives = new ObservableCollection<Drive>(masterdatabase.GetDrivesAsync().GetAwaiter.GetResult());
         }
     }
 }
