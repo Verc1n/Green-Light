@@ -6,6 +6,5 @@ public partial class DatabasePage : ContentPage
 	public DatabasePage()
 	{
 		InitializeComponent();
-		BindingContext = new DriveViewModel();
 	}
 }
