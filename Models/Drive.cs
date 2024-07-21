@@ -12,9 +12,26 @@ namespace Green_Light.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public DriveCondition[] cdnDriveConditions { get; set; }
         public DateTime dtmDriveDateTime { get; set; }
         public TimeSpan tspDriveTime { get; set; }
-        public Account actSupervisor { get; set; }
+        public string actSupervisorName { get; set; }
+        
+        //Storing attached drive conditions in a database-friendly way
+        public bool Parallel_Parking { get; set; }
+        public bool Vertical_Parking { get; set; }
+        public bool Diagonal_Parking { get; set; }
+        public bool No_Rain { get; set; }
+        public bool Light_Rain { get; set; }
+        public bool Moderate_Rain { get; set; }
+        public bool Heavy_Rain { get; set; }
+        public bool Local_Roads { get; set; }
+        public bool Rural_Roads { get; set; }
+        public bool City_Roads { get; set; }
+        public bool Highways { get; set; }
+        public bool No_Traffic { get; set; }
+        public bool Light_Traffic { get; set; }
+        public bool Moderate_Traffic { get; set; }
+        public bool Heavy_Traffic { get; set; }
+
     }
 }

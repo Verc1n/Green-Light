@@ -4,8 +4,7 @@ namespace Green_Light.Models
 {
     public class DriveCondition
     {
-        [PrimaryKey,AutoIncrement]
-        public int Id { get; set; }
+        [PrimaryKey]
         public string strName { get; set; }
         public string strImageURL { get; set; }
         public string strCategory { get; set; }

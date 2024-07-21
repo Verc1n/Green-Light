@@ -16,7 +16,7 @@ namespace Green_Light.Database_Bits
 
         readonly DriveCondition[] lstConditionsSource = [
                 new DriveCondition {
-                    strName = "Parallel Parking",
+                    strName = "Parallel_Parking",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Parking",
                     dtmDateLastSelected = DateTime.Now,
@@ -25,7 +25,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Vertical Parking",
+                    strName = "Vertical_Parking",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Parking",
                     dtmDateLastSelected = DateTime.Now,
@@ -34,7 +34,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Diagonal Parking",
+                    strName = "Diagonal_Parking",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Parking",
                     dtmDateLastSelected = DateTime.Now,
@@ -43,7 +43,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "No Rain",
+                    strName = "No_Rain",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Weather",
                     dtmDateLastSelected = DateTime.Now,
@@ -52,7 +52,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Light Rain",
+                    strName = "Light_Rain",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Weather",
                     dtmDateLastSelected = DateTime.Now,
@@ -61,7 +61,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Moderate Rain",
+                    strName = "Moderate_Rain",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Weather",
                     dtmDateLastSelected = DateTime.Now,
@@ -70,7 +70,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Heavy Rain",
+                    strName = "Heavy_Rain",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Weather",
                     dtmDateLastSelected = DateTime.Now,
@@ -79,7 +79,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Local Roads",
+                    strName = "Local_Roads",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Roads",
                     dtmDateLastSelected = DateTime.Now,
@@ -88,7 +88,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Rural Roads",
+                    strName = "Rural_Roads",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Roads",
                     dtmDateLastSelected = DateTime.Now,
@@ -97,7 +97,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "City Roads",
+                    strName = "City_Roads",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Roads",
                     dtmDateLastSelected = DateTime.Now,
@@ -115,7 +115,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "No Traffic",
+                    strName = "No_Traffic",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
@@ -124,7 +124,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Light Traffic",
+                    strName = "Light_Traffic",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
@@ -133,7 +133,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Moderate Traffic",
+                    strName = "Moderate_Traffic",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
@@ -142,7 +142,7 @@ namespace Green_Light.Database_Bits
 
                 new DriveCondition
                 {
-                    strName = "Heavy Traffic",
+                    strName = "Heavy_Traffic",
                     strImageURL = "placeholder_graphic.png",
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
@@ -160,7 +160,7 @@ namespace Green_Light.Database_Bits
                 return;
             }
             Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
-            Database.CreateTablesAsync<DriveCondition, Account>().Wait();
+            Database.CreateTablesAsync<DriveCondition, Account, Drive>().Wait();
 
             int count = Database.Table<DriveCondition>().CountAsync().GetAwaiter().GetResult();
             if(count==0)

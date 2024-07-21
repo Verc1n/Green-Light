@@ -10,18 +10,5 @@ namespace Green_Light.ViewModels
 {
     class DriveViewModel
     {
-        readonly IList<Drive> lstSource;
-        public DriveViewModel()
-        {
-            lstSource = new List<Drive>();
-            CreateDrive();
-        }
-        void CreateDrive()
-        {
-            lstSource.Add(new Drive
-            {
-                cdnDriveConditions = []
-            });
-        }
     }
 }
