@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace Green_Light.Models
 {
     class Account
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string strName { get; set; }
         public int intPIN { get; set; }
         public bool bolIsSupervisor { get; set; }
