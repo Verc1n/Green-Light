@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SQLite;
 using Green_Light.Models;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 namespace Green_Light.Database_Bits
 {
@@ -36,7 +37,9 @@ namespace Green_Light.Database_Bits
                 {
                     strName = "Diagonal Parking",
                     strImageURL = "placeholder_graphic.png",
-                    strCategory = "Parking"
+                    strCategory = "Parking",
+                    dtmDateLastSelected = DateTime.Now,
+                    intTimesSelected = 0
                 },
 
                 new DriveCondition
@@ -158,34 +161,29 @@ namespace Green_Light.Database_Bits
                 return;
             }
             Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
-            Debug.WriteLine("1");
-            await Database.CreateTableAsync<DriveCondition>();
+            Database.CreateTableAsync<DriveCondition>().Wait();
               
-            Debug.WriteLine("2");
 
-            int count = await Database.Table<DriveCondition>().CountAsync() ;
+
+            int count = Database.Table<DriveCondition>().CountAsync().GetAwaiter().GetResult();
             if(count==0)
             {
-                Debug.WriteLine("3");
                 foreach (DriveCondition condition in lstConditionsSource)
                 {
-                    await Database.InsertAsync(condition);
+                    Debug.WriteLine(condition.strName);
+                    Database.InsertAsync(condition).Wait();
                 }
-                Debug.WriteLine("4");
-            }            
+            }
         }
 
         public async Task<List<DriveCondition>> GetConditionsAsync()
         {
-            Debug.WriteLine("First func woking");
-            await Init();
-            return await Database.Table<DriveCondition>().ToListAsync();
+            return Database.Table<DriveCondition>().ToListAsync().GetAwaiter().GetResult();
         }
 
         public async Task<int> SaveConditionAsync(DriveCondition condition)
         {
-            await Init();
-            return await Database.UpdateAsync(condition);
+            return Database.UpdateAsync(condition).GetAwaiter().GetResult();
         }                          
     }
 }

@@ -15,23 +15,21 @@ namespace Green_Light.ViewModels
     {
         static MasterDatabase _MasterDatabase;
         
-        public static MasterDatabase masterdatabase
+        async Task<MasterDatabase> GetDatabase()
         {
-            get
+            if (_MasterDatabase == null)
             {
-                if (_MasterDatabase == null)
-                {
-                    _MasterDatabase = new MasterDatabase();
-                    _MasterDatabase.Init();
-                }
-                return _MasterDatabase;
+                _MasterDatabase = new MasterDatabase();
+                await _MasterDatabase.Init();
             }
+            return _MasterDatabase;
         }
         public ObservableCollection<DriveCondition> clnDriveConditions { get; private set; }
         public ObservableCollection<DriveCondition> clnSelectedDriveConditions { get; private set; }
 
         public DriveConditionsDatabaseAccessViewModel()
         {
+            MasterDatabase masterdatabase = GetDatabase().Result;
             Debug.WriteLine("Accessing the viewmodel");
             clnDriveConditions = new ObservableCollection<DriveCondition>(masterdatabase.GetConditionsAsync().Result);
         }        
