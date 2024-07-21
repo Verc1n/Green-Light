@@ -167,7 +167,6 @@ namespace Green_Light.Database_Bits
             {
                 foreach (DriveCondition condition in lstConditionsSource)
                 {
-                    Debug.WriteLine(condition.strName);
                     Database.InsertAsync(condition).Wait();
                 }
             }
