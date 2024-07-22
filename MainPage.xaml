@@ -4,78 +4,103 @@
              x:Class="Green_Light.MainPage">
 
     <Grid RowDefinitions="*,*,*,2*,6*"
-        ColumnDefinitions="*,*,*"
+        ColumnDefinitions="*,*,*,*,*,*"
         RowSpacing="5"
         ColumnSpacing="5"
         Padding="5">
 
         <Label Grid.Row="0"
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="4"
             Text="107 hours"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="40"/>
 
         <Image Grid.Row="0"
-            Grid.Column="3"
+            Grid.Column="5"
+            Grid.ColumnSpan="2"
             Source="sun.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
 
         <Label Grid.Row="1"
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="4"
             Text="12 hours"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="40"/>
 
         <Image Grid.Row="1"
-            Grid.Column="3"
+            Grid.Column="5"
+            Grid.ColumnSpan="2"
             Source="moon.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
     
         <Line Grid.Row="2"
-              Grid.ColumnSpan="3"
+              Grid.ColumnSpan="6"
               X2="10000"
               Stroke="Black"/>
 
         <Label Grid.Row="2"
-            Grid.ColumnSpan="3"
-            Text="Recomended Drives:"
+            Grid.ColumnSpan="6"            
+            Text="Recommended Drives:"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             FontSize="40"/>
 
         <Image Grid.Row="3"
             Grid.Column="0"
-            Source="placeholder_graphic.png"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"/>
-
-        <Image Grid.Row="3"
-            Grid.Column="1"
+            Grid.ColumnSpan="2"
             Source="placeholder_graphic.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
 
         <Image Grid.Row="3"
             Grid.Column="2"
+            Grid.ColumnSpan="2"           
+            Source="placeholder_graphic.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <Image Grid.Row="3"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
             Source="placeholder_graphic.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
 
         <Line Grid.Row="4"
-              Grid.ColumnSpan="3"
+              Grid.ColumnSpan="6"
               X2="10000"              
               Stroke="Black"/>
 
-        <Image Grid.Row="4"
-            Grid.ColumnSpan="3"
+        <ImageButton x:Name="StartButton"
+            Grid.Row="4"
+            Grid.ColumnSpan="6"
             Source="play.png"
+            Clicked="OnStartButtonClicked"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
 
+        <ImageButton x:Name="PauseButton"
+                     Grid.Row="4"
+                     Grid.ColumnSpan="3"
+                     Source="pause.png"
+                     Clicked="OnPauseButtonClicked"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     IsVisible="False"/>
+
+        <ImageButton x:Name="StopButton"
+                     Grid.Row="4"
+                     Grid.Column="4"
+                     Grid.ColumnSpan="3"
+                     Source="stop.png"
+                     Clicked="OnStopButtonClicked"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     IsVisible="False"/>
     </Grid>
 
 </ContentPage>
