@@ -34,7 +34,7 @@
             Source="moon.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
-
+    
         <Line Grid.Row="2"
               Grid.ColumnSpan="3"
               X2="10000"
@@ -72,7 +72,7 @@
 
         <Image Grid.Row="4"
             Grid.ColumnSpan="3"
-            Source="placeholder_graphic.png"
+            Source="play.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
 
