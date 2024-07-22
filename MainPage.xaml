@@ -18,7 +18,7 @@
 
         <Image Grid.Row="0"
             Grid.Column="3"
-            Source="placeholder_graphic.png"
+            Source="sun.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
 
@@ -31,7 +31,7 @@
 
         <Image Grid.Row="1"
             Grid.Column="3"
-            Source="placeholder_graphic.png"
+            Source="moon.png"
             HorizontalOptions="Center"
             VerticalOptions="Center"/>
 

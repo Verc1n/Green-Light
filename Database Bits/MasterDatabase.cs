@@ -160,7 +160,7 @@ namespace Green_Light.Database_Bits
                 return;
             }
             Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
-            Database.CreateTablesAsync<DriveCondition, Account, Drive>().Wait();
+            Database.CreateTablesAsync<DriveCondition, Account, Drive, GlobalVariables>().Wait();
 
             int count = Database.Table<DriveCondition>().CountAsync().GetAwaiter().GetResult();
             if(count==0)

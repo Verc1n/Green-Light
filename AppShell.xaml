@@ -20,7 +20,7 @@
                    FontSize="20"/>
 
             <Image Grid.Column="1"
-                   Source="placeholder_graphic.png"
+                   Source="user.png"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"/>
             
@@ -37,22 +37,22 @@
     </Shell.FlyoutHeader>
 
     <FlyoutItem Title="Home"
-                Icon="placeholder_graphic.png">
+                Icon="car.png">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="Summary"
-                Icon="placeholder_graphic.png">
+                Icon="checklist.png">
         <ShellContent ContentTemplate="{DataTemplate local:SummaryPage}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="Database"
-                Icon="placeholder_graphic.png">
+                Icon="folder.png">
         <ShellContent ContentTemplate="{DataTemplate local:DatabasePage}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="Settings"
-                Icon="placeholder_graphic.png">
+                Icon="settings.png">
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
 
