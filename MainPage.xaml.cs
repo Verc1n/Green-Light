@@ -8,15 +8,17 @@ namespace Green_Light
         System.Timers.Timer tmrDriveTimer;
         DateTime dtmStartTime;
         TimeSpan tspPausedTime;
+        DateTime dtmPauseStart;
         public MainPage()
         {
             InitializeComponent();
+            Routing.RegisterRoute(nameof(ConditionsPage), typeof(ConditionsPage));
             tspPausedTime = TimeSpan.Zero;
         }
 
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            TimeSpan ElapsedTime = (DateTime.Now - dtmStartTime) + tspPausedTime;
+            TimeSpan ElapsedTime = (DateTime.Now - dtmStartTime) - tspPausedTime;
             MainThread.BeginInvokeOnMainThread(() =>{
                 lblTimer.Text=$"Elapsed Time: {ElapsedTime:h\\:mm\\:ss}";
             });
@@ -42,6 +44,7 @@ namespace Green_Light
         {
             tmrDriveTimer.Enabled=false;
             tmrDriveTimer.Dispose();
+            Navigation.PushAsync(new ConditionsPage());
         }
 
         private void OnPauseButtonClicked(object sender, EventArgs e)
@@ -52,11 +55,15 @@ namespace Green_Light
                     btnPause.Source = "play.png";
                     lblRecordingIndicator.TextColor = Colors.Red;
                     lblRecordingIndicator.Text = "Paused";
+                    tmrDriveTimer.Enabled= false;
+                    dtmPauseStart = DateTime.Now;
                     break;
                 case "File: play.png":
                     btnPause.Source = "pause.png";
                     lblRecordingIndicator.TextColor = Colors.Green;
                     lblRecordingIndicator.Text = "Recording";
+                    tspPausedTime = DateTime.Now - dtmPauseStart;
+                    tmrDriveTimer.Enabled= true;
                     break;
 
             }

@@ -133,7 +133,7 @@
                VerticalOptions="Center"
                IsVisible="False"
                FontSize="30"
-               Text="Elapsed Time:"
+               Text="Elapsed Time: 0:00:00"
                />
     </Grid>
 
