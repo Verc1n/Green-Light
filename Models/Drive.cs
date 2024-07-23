@@ -8,13 +8,14 @@ using SQLite;
 
 namespace Green_Light.Models
 {
-    class Drive
+    public class Drive
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public DateTime dtmDriveDateTime { get; set; }
         public TimeSpan tspDriveTime { get; set; }
         public string actSupervisorName { get; set; }
+        public bool isValidated { get; set; }
         
         //Storing attached drive conditions in a database-friendly way
         public bool Parallel_Parking { get; set; }

@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using Green_Light.Models;
+using System.Diagnostics;
 using System.Timers;
+
 
 namespace Green_Light
 {
@@ -13,6 +15,7 @@ namespace Green_Light
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(ConditionsPage), typeof(ConditionsPage));
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             tspPausedTime = TimeSpan.Zero;
         }
 
@@ -44,7 +47,8 @@ namespace Green_Light
         {
             tmrDriveTimer.Enabled=false;
             tmrDriveTimer.Dispose();
-            Navigation.PushAsync(new ConditionsPage());
+            Drive drvInProgressDrive = new Drive { tspDriveTime = (DateTime.Now - dtmStartTime) - tspPausedTime };        
+            Navigation.PushAsync(new LoginPage(drvInProgressDrive));
         }
 
         private void OnPauseButtonClicked(object sender, EventArgs e)
@@ -65,7 +69,6 @@ namespace Green_Light
                     tspPausedTime = DateTime.Now - dtmPauseStart;
                     tmrDriveTimer.Enabled= true;
                     break;
-
             }
         }
     }

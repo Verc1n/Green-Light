@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Green_Light.ConditionsPage"
              Title="ConditionsPage">
-    <Grid RowDefinitions="*,*,4*"
+    <Grid RowDefinitions="*,*,4*, *"
           ColumnDefinitions="3*,2*">
         
-        <Label  Grid.ColumnSpan="2"
+        <Label  x:Name="lblDriveTime"
+                Grid.ColumnSpan="2"
                 Text="0h 40min"
                 FontSize="40"
                 HorizontalOptions="Center"
@@ -51,8 +52,8 @@
                         ItemsSource="{Binding clnDriveConditions}"
                         SelectionMode="Multiple"
                         SelectedItems="{Binding clnSelectedDriveConditions}"
-                        ItemsLayout="VerticalGrid, 4"
-                        Grid.Row="3"
+                        ItemsLayout="VerticalGrid, 3"
+                        Grid.Row="2"
                         Grid.ColumnSpan="2">
             
             <CollectionView.ItemTemplate>
@@ -76,6 +77,17 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+        <Button Grid.Row="3"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Yellow"
+                TextColor="Black"
+                FontSize="60"
+                Text="Submit"
+                BorderColor="Black"
+                BorderWidth="5"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"/>
 
     </Grid>
 </ContentPage>
