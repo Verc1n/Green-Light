@@ -17,7 +17,7 @@ namespace Green_Light.Database_Bits
         readonly DriveCondition[] lstConditionsSource = [
                 new DriveCondition {
                     strName = "Parallel_Parking",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "parallel_parking.png",
                     strCategory = "Parking",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -26,7 +26,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Vertical_Parking",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "bvertical_parking.png",
                     strCategory = "Parking",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -35,7 +35,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Diagonal_Parking",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "diagonal_parking.png",
                     strCategory = "Parking",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -44,7 +44,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "No_Rain",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "no_rain.png",
                     strCategory = "Weather",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -53,7 +53,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Light_Rain",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "light_rain.png",
                     strCategory = "Weather",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -62,7 +62,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Moderate_Rain",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "moderate_rain.png",
                     strCategory = "Weather",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -71,7 +71,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Heavy_Rain",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "heavy_rain.png",
                     strCategory = "Weather",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
