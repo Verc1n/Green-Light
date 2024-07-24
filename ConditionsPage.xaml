@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Green_Light.ConditionsPage"
              Title="ConditionsPage">
+
     <Grid RowDefinitions="*,*,4*, *"
           ColumnDefinitions="3*,2*">
         
@@ -51,7 +52,7 @@
         <CollectionView x:Name="collectionView"
                         ItemsSource="{Binding clnDriveConditions}"
                         SelectionMode="Multiple"
-                        SelectedItems="{Binding clnSelectedDriveConditions}"
+                        SelectedItems="{Binding clnSelectedConditions}"
                         ItemsLayout="VerticalGrid, 3"
                         Grid.Row="2"
                         Grid.ColumnSpan="2">
