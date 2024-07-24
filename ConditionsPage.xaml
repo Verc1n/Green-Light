@@ -78,7 +78,9 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Button Grid.Row="3"
+        <Button x:Name="btnSubmit"
+                Clicked="btnSubmitClicked"
+                Grid.Row="3"
                 Grid.ColumnSpan="2"
                 BackgroundColor="Yellow"
                 TextColor="Black"
