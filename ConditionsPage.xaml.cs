@@ -12,7 +12,6 @@ public partial class ConditionsPage : ContentPage
 {
 	Dictionary<DriveCondition, string> ConditionDriveBindings;
 	Drive drvInProgress;
-    public ObservableCollection<DriveCondition> clnSelectedConditions = new ObservableCollection<DriveCondition>();
     public ConditionsPage(Drive drive)
 	{
 		MasterDatabase masterDatabase = new MasterDatabase();
@@ -20,7 +19,6 @@ public partial class ConditionsPage : ContentPage
 		lblDriveTime.Text = string.Format("{0} hours {1} minutes", (int)drive.tspDriveTime.TotalHours, (int)drive.tspDriveTime.TotalMinutes);
         BindingContext = new DriveViewModel(masterDatabase);
 		drvInProgress = drive;
-
 	}
 
 	public void btnSubmitClicked(object sender, EventArgs e)
@@ -35,7 +33,7 @@ public partial class ConditionsPage : ContentPage
             }
             else
             {
-                _DriveViewModel.SetDriveConditionsAsync(clnSelectedConditions);
+                //_DriveViewModel.SetDriveConditionsAsync(clnSelectedConditions);
             }
         }
 	}

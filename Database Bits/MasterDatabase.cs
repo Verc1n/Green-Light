@@ -188,7 +188,7 @@ namespace Green_Light.Database_Bits
             return Database.Table<DriveCondition>().ToListAsync().GetAwaiter().GetResult();
         }
 
-        async Task<List<Drive>> GetDrivesAsync()
+        public async Task<List<Drive>> GetDrivesAsync()
         {
             return Database.Table<Drive>().ToListAsync().GetAwaiter().GetResult();
         }

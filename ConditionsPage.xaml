@@ -52,7 +52,7 @@
         <CollectionView x:Name="collectionView"
                         ItemsSource="{Binding clnDriveConditions}"
                         SelectionMode="Multiple"
-                        SelectedItems="{Binding clnSelectedConditions}"
+                        SelectedItems="{Binding clnSelectedDriveConditions}"
                         ItemsLayout="VerticalGrid, 3"
                         Grid.Row="2"
                         Grid.ColumnSpan="2">

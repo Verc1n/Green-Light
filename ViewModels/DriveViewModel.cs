@@ -12,13 +12,19 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
+
 namespace Green_Light.ViewModels
 {
     class DriveViewModel : INotifyPropertyChanged
     {
         public Drive _Drive { get; set; }
+
         static MasterDatabase masterdatabase = new MasterDatabase();
+        
+        public DriveConditionsViewModel _DriveConditionsViewModel { get; set; }
+
         public ObservableCollection<Drive> clnDrives { get; set; }
+        public ObservableCollection<DriveCondition> clnDriveConditions { get; private set; }
         public ObservableCollection<DriveCondition> clnSelectedDriveConditions { get; private set; }
         public ICommand SetConditionsCommand { get; set; }
 
@@ -28,6 +34,9 @@ namespace Green_Light.ViewModels
             _Drive = new Drive();
             //clnDrives = new ObservableCollection<Drive>(masterdatabase.GetDrivesAsync().GetAwaiter.GetResult());
             SetConditionsCommand = new Command<ObservableCollection<DriveCondition>>(SetDriveConditionsAsync);
+            _DriveConditionsViewModel = new DriveConditionsViewModel(masterDatabase);
+            clnDriveConditions = _DriveConditionsViewModel.clnDriveConditions;
+            clnSelectedDriveConditions = _DriveConditionsViewModel.clnSelectedDriveConditions;
         }
         
         public void SetDriveConditionsAsync(ObservableCollection<DriveCondition> selectedconditions)
