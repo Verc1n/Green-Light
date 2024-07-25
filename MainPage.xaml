@@ -79,6 +79,7 @@
             Grid.Row="4"
             Grid.RowSpan="3"
             Grid.ColumnSpan="6"
+            Scale="0.9"
             Source="play.png"
             Clicked="OnStartButtonClicked"
             HorizontalOptions="Center"

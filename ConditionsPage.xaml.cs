@@ -25,7 +25,7 @@ public partial class ConditionsPage : ContentPage
 	{
 		var _DriveViewModel = BindingContext as DriveViewModel;
         if (_DriveViewModel != null)
-        {
+        {          
             if (pkrSupervisor.SelectedItem == null)
             {
                 Debug.WriteLine("Hello");
@@ -33,8 +33,23 @@ public partial class ConditionsPage : ContentPage
             }
             else
             {
-                //_DriveViewModel.SetDriveConditionsAsync(clnSelectedConditions);
+                _DriveViewModel.SetDriveConditionsAsync();
+                Debug.WriteLine(drvInProgress.No_Rain);
             }
         }
 	}
+
+    public void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var viewModel = BindingContext as DriveViewModel;
+
+        if (viewModel != null)
+        {
+            viewModel.clnSelectedDriveConditions.Clear();
+            foreach (var item in e.CurrentSelection.Cast<DriveCondition>())
+            {
+                viewModel.clnSelectedDriveConditions.Add(item);
+            }
+        }
+    }
 }

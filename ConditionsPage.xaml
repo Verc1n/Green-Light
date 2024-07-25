@@ -53,6 +53,7 @@
                         ItemsSource="{Binding clnDriveConditions}"
                         SelectionMode="Multiple"
                         SelectedItems="{Binding clnSelectedDriveConditions}"
+                        SelectionChangedCommand="{Binding OnSelectionChanged}"
                         ItemsLayout="VerticalGrid, 3"
                         Grid.Row="2"
                         Grid.ColumnSpan="2">
