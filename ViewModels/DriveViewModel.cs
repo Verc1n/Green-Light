@@ -70,6 +70,21 @@ namespace Green_Light.ViewModels
             }
         }
 
+        public void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var viewModel = new DriveViewModel(masterdatabase);
+
+            if (viewModel != null)
+            {
+                viewModel.clnSelectedDriveConditions.Clear();
+                foreach (var item in e.CurrentSelection.Cast<DriveCondition>())
+                {
+                    viewModel.clnSelectedDriveConditions.Add(item);
+                }
+            }
+        }
+
+
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 

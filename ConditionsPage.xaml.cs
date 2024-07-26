@@ -4,14 +4,15 @@ using Green_Light.ViewModels;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
+using System.Windows.Input;
 
 namespace Green_Light;
-
 
 public partial class ConditionsPage : ContentPage
 {
 	Dictionary<DriveCondition, string> ConditionDriveBindings;
 	Drive drvInProgress;
+
     public ConditionsPage(Drive drive)
 	{
 		MasterDatabase masterDatabase = new MasterDatabase();
@@ -39,17 +40,5 @@ public partial class ConditionsPage : ContentPage
         }
 	}
 
-    public void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-        var viewModel = BindingContext as DriveViewModel;
 
-        if (viewModel != null)
-        {
-            viewModel.clnSelectedDriveConditions.Clear();
-            foreach (var item in e.CurrentSelection.Cast<DriveCondition>())
-            {
-                viewModel.clnSelectedDriveConditions.Add(item);
-            }
-        }
-    }
 }
