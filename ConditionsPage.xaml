@@ -52,7 +52,7 @@
         <CollectionView x:Name="collectionView"
                         ItemsSource="{Binding clnDriveConditions}"
                         SelectionMode="Multiple"
-                        SelectedItems="{Binding clnSelectedDriveConditions}"
+                        SelectedItems="{Binding lstSelectedDriveConditions, Mode=TwoWay}"
                         SelectionChangedCommand="{Binding OnSelectionChanged}"
                         ItemsLayout="VerticalGrid, 3"
                         Grid.Row="2"
@@ -60,8 +60,8 @@
             
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="5" 
-                           Margin="5">
+                    <Frame Padding="1" 
+                           Margin="1">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="CommonStates">
                                 <VisualState Name="Normal" />
@@ -74,7 +74,7 @@
                         </VisualStateManager.VisualStateGroups>
                         <Image Source="{Binding strImageURL}"
                                 Aspect="AspectFit"
-                                Scale="0.8"/>
+                                Scale="0.9"/>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

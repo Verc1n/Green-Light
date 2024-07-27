@@ -80,7 +80,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Local_Roads",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "local_roads.png",
                     strCategory = "Roads",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -89,7 +89,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Rural_Roads",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "rural_roads.png",
                     strCategory = "Roads",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -98,7 +98,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "City_Roads",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "city_roads.png",
                     strCategory = "Roads",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -107,7 +107,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Highways",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "highways.png",
                     strCategory = "Roads",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -116,7 +116,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "No_Traffic",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "no_traffic.png",
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -125,7 +125,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Light_Traffic",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "light_traffic.png",
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -134,7 +134,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Moderate_Traffic",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "moderate_traffic.png",
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
@@ -143,7 +143,7 @@ namespace Green_Light.Database_Bits
                 new DriveCondition
                 {
                     strName = "Heavy_Traffic",
-                    strImageURL = "placeholder_graphic.png",
+                    strImageURL = "heavy_traffic.png",
                     strCategory = "Traffic",
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0

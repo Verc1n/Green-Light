@@ -25,19 +25,15 @@ namespace Green_Light.ViewModels
         
         public DriveConditionsViewModel _DriveConditionsViewModel { get; set; }
 
-        public ObservableCollection<DriveCondition> _clnDriveConditions;
+        private ObservableCollection<DriveCondition> _clnDriveConditions;
         public ObservableCollection<DriveCondition> clnDriveConditions
         {
             get => _clnDriveConditions;
             set => SetProperty(ref _clnDriveConditions, value);
         }
 
-        public ObservableCollection<DriveCondition> _clnSelectedDriveConditions;
-        public ObservableCollection<DriveCondition> clnSelectedDriveConditions
-        {
-            get => _clnSelectedDriveConditions;
-            set => SetProperty(ref _clnSelectedDriveConditions, value);
-        }
+        private ObservableCollection<DriveCondition> lstSelectedDriveConditions;
+
         
         public ICommand SetConditionsCommand { get; set; }
 
@@ -53,13 +49,14 @@ namespace Green_Light.ViewModels
 
             _clnDriveConditions = _DriveConditionsViewModel.clnDriveConditions;
 
-            _clnSelectedDriveConditions = _DriveConditionsViewModel.clnSelectedDriveConditions;
+            lstSelectedDriveConditions = new ObservableCollection<DriveCondition>();
+
         }
         
         public void SetDriveConditionsAsync()
         {
-            Debug.WriteLine(clnSelectedDriveConditions[0].strName);
-            foreach (DriveCondition condition in clnSelectedDriveConditions)
+            Debug.WriteLine(lstSelectedDriveConditions[0].strName);
+            foreach (DriveCondition condition in lstSelectedDriveConditions)
             {
                 PropertyInfo property = typeof(Drive).GetProperty(condition.strName);
 
@@ -76,10 +73,10 @@ namespace Green_Light.ViewModels
 
             if (viewModel != null)
             {
-                viewModel.clnSelectedDriveConditions.Clear();
+                viewModel.lstSelectedDriveConditions.Clear();
                 foreach (var item in e.CurrentSelection.Cast<DriveCondition>())
                 {
-                    viewModel.clnSelectedDriveConditions.Add(item);
+                    viewModel.lstSelectedDriveConditions.Add(item);
                 }
             }
         }

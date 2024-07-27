@@ -18,8 +18,7 @@ namespace Green_Light.ViewModels
     public class DriveConditionsViewModel : INotifyPropertyChanged
     {
         static MasterDatabase masterdatabase = new MasterDatabase();
-        public ObservableCollection<DriveCondition> clnDriveConditions { get; private set; }
-        public ObservableCollection<DriveCondition> clnSelectedDriveConditions { get; private set; }
+        public ObservableCollection<DriveCondition> clnDriveConditions { get; set; }
         public DriveConditionsViewModel(MasterDatabase masterDatabase)
         {
             masterdatabase = masterDatabase.GetDatabase().GetAwaiter().GetResult();

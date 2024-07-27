@@ -10,7 +10,6 @@ namespace Green_Light;
 
 public partial class ConditionsPage : ContentPage
 {
-	Dictionary<DriveCondition, string> ConditionDriveBindings;
 	Drive drvInProgress;
 
     public ConditionsPage(Drive drive)
@@ -24,7 +23,7 @@ public partial class ConditionsPage : ContentPage
 
 	public void btnSubmitClicked(object sender, EventArgs e)
 	{
-		var _DriveViewModel = BindingContext as DriveViewModel;
+        var _DriveViewModel = BindingContext as DriveViewModel;
         if (_DriveViewModel != null)
         {          
             if (pkrSupervisor.SelectedItem == null)
