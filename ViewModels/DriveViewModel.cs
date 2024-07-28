@@ -17,7 +17,7 @@ using System.Diagnostics;
 
 namespace Green_Light.ViewModels
 {
-    class DriveViewModel : ObservableObject
+    public class DriveViewModel : ObservableObject
     {
         public Drive _Drive { get; set; }
 
@@ -32,7 +32,7 @@ namespace Green_Light.ViewModels
             set => SetProperty(ref _clnDriveConditions, value);
         }
 
-        private ObservableCollection<DriveCondition> lstSelectedDriveConditions;
+        public ObservableCollection<DriveCondition> clnSelectedDriveConditions;
 
         
         public ICommand SetConditionsCommand { get; set; }
@@ -49,14 +49,15 @@ namespace Green_Light.ViewModels
 
             _clnDriveConditions = _DriveConditionsViewModel.clnDriveConditions;
 
-            lstSelectedDriveConditions = new ObservableCollection<DriveCondition>();
+            clnSelectedDriveConditions = new ObservableCollection<DriveCondition>();
 
         }
         
         public void SetDriveConditionsAsync()
         {
-            Debug.WriteLine(lstSelectedDriveConditions[0].strName);
-            foreach (DriveCondition condition in lstSelectedDriveConditions)
+            Debug.WriteLine(clnSelectedDriveConditions.Count);
+            Debug.WriteLine(clnSelectedDriveConditions[0].strName);
+            foreach (DriveCondition condition in clnSelectedDriveConditions)
             {
                 PropertyInfo property = typeof(Drive).GetProperty(condition.strName);
 
@@ -69,14 +70,15 @@ namespace Green_Light.ViewModels
 
         public void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Debug.WriteLine("Selection changed");
             var viewModel = new DriveViewModel(masterdatabase);
 
             if (viewModel != null)
             {
-                viewModel.lstSelectedDriveConditions.Clear();
+                viewModel.clnSelectedDriveConditions.Clear();
                 foreach (var item in e.CurrentSelection.Cast<DriveCondition>())
                 {
-                    viewModel.lstSelectedDriveConditions.Add(item);
+                    viewModel.clnSelectedDriveConditions.Add(item);
                 }
             }
         }

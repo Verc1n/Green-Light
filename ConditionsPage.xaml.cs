@@ -21,6 +21,7 @@ public partial class ConditionsPage : ContentPage
 		drvInProgress = drive;
 	}
 
+
 	public void btnSubmitClicked(object sender, EventArgs e)
 	{
         var _DriveViewModel = BindingContext as DriveViewModel;
@@ -28,14 +29,19 @@ public partial class ConditionsPage : ContentPage
         {          
             if (pkrSupervisor.SelectedItem == null)
             {
-                Debug.WriteLine("Hello");
+                Debug.WriteLine("supervisor is null");
                 return;
             }
             else
             {
+                Debug.WriteLine(drvInProgress.No_Rain);
                 _DriveViewModel.SetDriveConditionsAsync();
                 Debug.WriteLine(drvInProgress.No_Rain);
             }
+        }
+        else
+        {
+            Debug.WriteLine("null drivemodel");
         }
 	}
 

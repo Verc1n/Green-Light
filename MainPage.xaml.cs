@@ -1,6 +1,7 @@
 ﻿using Green_Light.Models;
 using System.Diagnostics;
 using System.Timers;
+using System.Windows.Input;
 
 
 namespace Green_Light
@@ -11,12 +12,14 @@ namespace Green_Light
         DateTime dtmStartTime;
         TimeSpan tspPausedTime;
         DateTime dtmPauseStart;
+
         public MainPage()
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(ConditionsPage), typeof(ConditionsPage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             tspPausedTime = TimeSpan.Zero;
+ 
         }
 
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
