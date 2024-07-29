@@ -70,12 +70,16 @@
                     Grid.ColumnSpan="2">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <HorizontalStackLayout>
-                        <Label Text="{Binding tspDriveTime}"
+                    <Frame BackgroundColor="LightGreen"
+                           Padding="5"
+                           Margin="5">
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding tspDriveTime}"
                                    FontSize="20"/>
-                        <Label Text="{Binding dtmDriveDateTime}"
+                            <Label Text="{Binding dtmDriveDateTime}"
                                    FontSize="20"/>
-                    </HorizontalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
