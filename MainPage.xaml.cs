@@ -1,6 +1,7 @@
 ﻿using Green_Light.Models;
 using System.Diagnostics;
 using System.Timers;
+using Green_Light.Database_Bits;
 using System.Windows.Input;
 
 
@@ -12,6 +13,7 @@ namespace Green_Light
         DateTime dtmStartTime;
         TimeSpan tspPausedTime;
         DateTime dtmPauseStart;
+        MasterDatabase masterDatabase { get; set; }
 
         public MainPage()
         {
@@ -19,6 +21,7 @@ namespace Green_Light
             Routing.RegisterRoute(nameof(ConditionsPage), typeof(ConditionsPage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             tspPausedTime = TimeSpan.Zero;
+            masterDatabase = new MasterDatabase();
  
         }
 
@@ -50,8 +53,9 @@ namespace Green_Light
         {
             tmrDriveTimer.Enabled=false;
             tmrDriveTimer.Dispose();
-            Drive drvInProgressDrive = new Drive { tspDriveTime = (DateTime.Now - dtmStartTime) - tspPausedTime };        
-            Navigation.PushAsync(new LoginPage(drvInProgressDrive));
+            Drive drvInProgressDrive = new Drive { tspDriveTime = (DateTime.Now - dtmStartTime) - tspPausedTime, dtmDriveDateTime=DateTime.Now };        
+            masterDatabase.SaveDriveAsync(drvInProgressDrive);
+            //Navigation.PushAsync(new LoginPage(drvInProgressDrive));
         }
 
         private void OnPauseButtonClicked(object sender, EventArgs e)

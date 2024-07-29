@@ -34,6 +34,8 @@ namespace Green_Light.ViewModels
 
         public ObservableCollection<DriveCondition> clnSelectedDriveConditions;
 
+        public ObservableCollection<Drive> clnDrives { get; set; }
+
         
         public ICommand SetConditionsCommand { get; set; }
 
@@ -50,6 +52,8 @@ namespace Green_Light.ViewModels
             _clnDriveConditions = _DriveConditionsViewModel.clnDriveConditions;
 
             clnSelectedDriveConditions = new ObservableCollection<DriveCondition>();
+
+            clnDrives = new ObservableCollection<Drive>(masterdatabase.GetDrivesAsync().GetAwaiter().GetResult());
 
         }
         

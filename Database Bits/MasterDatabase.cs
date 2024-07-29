@@ -195,7 +195,16 @@ namespace Green_Light.Database_Bits
 
         public async Task<int> SaveDriveAsync(Drive drive)
         {
-            return Database.UpdateAsync(drive).GetAwaiter().GetResult();
+            await Init();
+            if (drive.Id != 0)
+            {
+                return Database.UpdateAsync(drive).GetAwaiter().GetResult();
+            }
+            else
+            {
+                return Database.InsertAsync(drive).GetAwaiter().GetResult();
+            }
+            
         }
 
         public async Task<int> SaveConditionAsync(DriveCondition condition)

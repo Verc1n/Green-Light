@@ -63,6 +63,26 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+
+        <CollectionView x:Name="cnvDrives"
+                    ItemsSource="{Binding clnDrives}"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding tspDriveTime}"
+                                   FontSize="20"/>
+                        <Label Text="{Binding dtmDriveDateTime}"
+                                   FontSize="20"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+        
     </Grid>
+    
+
 
 </ContentPage>
