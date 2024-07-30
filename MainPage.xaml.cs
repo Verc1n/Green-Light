@@ -53,6 +53,13 @@ namespace Green_Light
         {
             tmrDriveTimer.Enabled=false;
             tmrDriveTimer.Dispose();
+            btnStart.IsVisible = true;
+            btnPause.IsVisible = false;
+            btnStop.IsVisible = false;
+            lblDrive.IsVisible = false;
+            lblRecordingIndicator.IsVisible = false;
+            lblTimer.IsVisible = false;
+            lblTimer.Text = "0:00:00";
             Drive drvInProgressDrive = new Drive { tspDriveTime = (DateTime.Now - dtmStartTime) - tspPausedTime, dtmDriveDateTime=DateTime.Now };        
             masterDatabase.SaveDriveAsync(drvInProgressDrive);
             //Navigation.PushAsync(new LoginPage(drvInProgressDrive));
