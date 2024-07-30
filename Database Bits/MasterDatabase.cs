@@ -14,6 +14,7 @@ namespace Green_Light.Database_Bits
     {
         SQLiteAsyncConnection Database;
 
+        
         readonly DriveCondition[] lstConditionsSource = [
                 new DriveCondition {
                     strName = "Parallel_Parking",
@@ -152,7 +153,11 @@ namespace Green_Light.Database_Bits
         public MasterDatabase()
         {
         }
-                
+
+
+        //Initialises the database and adds default values
+        //Called by everything that accesses the database
+        //Ignored if the database is already initialised
         public async Task Init()
         {
             if (Database is not null)
@@ -173,6 +178,8 @@ namespace Green_Light.Database_Bits
         }
 
         static MasterDatabase _MasterDatabase;
+        //Retrieves the database
+        //Calls the Init function if the database is null
         public async Task<MasterDatabase> GetDatabase()
         {
             if (_MasterDatabase == null)
@@ -183,16 +190,22 @@ namespace Green_Light.Database_Bits
             return _MasterDatabase;
         }
 
+        //Retrieves the conditions table and casts it to a list
         public async Task<List<DriveCondition>> GetConditionsAsync()
         {
             return Database.Table<DriveCondition>().ToListAsync().GetAwaiter().GetResult();
         }
 
+        //Retrieves the drives table and casts it to a list
         public async Task<List<Drive>> GetDrivesAsync()
         {
             return Database.Table<Drive>().ToListAsync().GetAwaiter().GetResult();
         }
 
+        //Waits for Init, then saves a drive
+        //If the drive is already in the database, updates the drive
+        //Otherwise adds a new drive
+        //Input: Drive
         public async Task<int> SaveDriveAsync(Drive drive)
         {
             await Init();
@@ -207,6 +220,9 @@ namespace Green_Light.Database_Bits
             
         }
 
+        //Updates the condition data
+        //Input: Condition
+        //Unlike the drive function, it is not possible to add a new condition so no extra 
         public async Task<int> SaveConditionAsync(DriveCondition condition)
         {
             return Database.UpdateAsync(condition).GetAwaiter().GetResult();
