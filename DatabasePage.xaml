@@ -73,12 +73,23 @@
                     <Frame BackgroundColor="LightGreen"
                            Padding="5"
                            Margin="5">
-                        <HorizontalStackLayout>
-                            <Label Text="{Binding tspDriveTime}"
-                                   FontSize="20"/>
-                            <Label Text="{Binding dtmDriveDateTime}"
-                                   FontSize="20"/>
-                        </HorizontalStackLayout>
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="*,*,*"
+                              Padding="5">
+                            <Label Text="{Binding tspDriveTime, StringFormat='{0:hh\\:mm\\:ss}'}"
+                                   Grid.Column="1"
+                                   FontSize="20"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="{Binding dtmDriveDateTime, StringFormat='{0:MMMM dd, yyyy}'}"
+                                   Grid.Column="0"
+                                   FontSize="20"
+                                   HorizontalOptions="Center"/>
+                            <Image Source="{Binding strImageUrl}"
+                                   Scale="0.4"
+                                   Grid.Column="2"
+                                   HorizontalOptions="Center">
+                            </Image>
+                        </Grid>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

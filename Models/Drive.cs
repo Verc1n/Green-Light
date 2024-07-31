@@ -14,6 +14,7 @@ namespace Green_Light.Models
         public int Id { get; set; }
         public DateTime dtmDriveDateTime { get; set; }
         public TimeSpan tspDriveTime { get; set; }
+        public string strImageUrl { get; set; }
         public string actSupervisorName { get; set; }
         public bool isValidated { get; set; }
         
