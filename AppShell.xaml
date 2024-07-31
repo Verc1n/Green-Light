@@ -56,10 +56,14 @@
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
 
-
     <FlyoutItem Title="Conditions"
                 Icon="placeholder_graphic.png">
         <ShellContent ContentTemplate="{DataTemplate local:ConditionsPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Login"
+                Icon="placeholder_graphic.png">
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
     </FlyoutItem>
 
 </Shell>
