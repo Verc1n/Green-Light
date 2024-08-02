@@ -18,7 +18,7 @@ namespace Green_Light
         public MainPage()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             tspPausedTime = TimeSpan.Zero;
             masterDatabase = new MasterDatabase();
  
