@@ -16,9 +16,11 @@
                PlaceholderColor="DimGrey"
                IsPassword="True"
                HorizontalOptions="Center"/>
+        
         <Button x:Name="btnLogin"
                 Text="Log in"
                 Clicked="btnLoginClicked"
                 />
+        
     </VerticalStackLayout>
 </ContentPage>

@@ -64,32 +64,43 @@
             </Picker.ItemsSource>
         </Picker>
 
+        <Line Grid.Row="2"
+              Grid.ColumnSpan="2"
+              X2="10000"/>
         <CollectionView x:Name="cnvDrives"
                     ItemsSource="{Binding clnDrives}"
                     Grid.Row="2"
-                    Grid.ColumnSpan="2">
+                    Grid.ColumnSpan="2"
+                    
+                        >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BackgroundColor="LightGreen"
+                           BorderColor="Black"
                            Padding="5"
-                           Margin="5">
-                        <Grid RowDefinitions="*"
-                              ColumnDefinitions="*,*,*"
-                              Padding="5">
-                            <Label Text="{Binding tspDriveTime, StringFormat='{0:hh\\:mm\\:ss}'}"
+                           Margin="0,10,0,10">
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItem Text="Delete"
+                                           BackgroundColor="Pink"/>
+                            </SwipeView.RightItems>
+                            <Grid RowDefinitions="30"
+                                  ColumnDefinitions="*,*,*">
+                                <Label Text="{Binding tspDriveTime, StringFormat='{0:hh\\:mm\\:ss}'}"
                                    Grid.Column="1"
                                    FontSize="20"
                                    HorizontalOptions="Center"/>
-                            <Label Text="{Binding dtmDriveDateTime, StringFormat='{0:MMMM dd, yyyy}'}"
+                                <Label Text="{Binding dtmDriveDateTime, StringFormat='{0:MMMM dd, yyyy}'}"
                                    Grid.Column="0"
                                    FontSize="20"
                                    HorizontalOptions="Center"/>
-                            <Image Source="{Binding strImageUrl}"
-                                   Scale="0.4"
+                                <Image Source="{Binding strImageUrl}"
+                                   Scale="1"
                                    Grid.Column="2"
                                    HorizontalOptions="Center">
-                            </Image>
-                        </Grid>
+                                </Image>
+                            </Grid>
+                        </SwipeView>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
