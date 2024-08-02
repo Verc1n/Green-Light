@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Windows.Input;
 
+//Codebehind for the conditions page
+
 namespace Green_Light;
 
 public partial class ConditionsPage : ContentPage

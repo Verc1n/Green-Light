@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+//This class contains information about the user's accounts
+//Stores username, password and whether or not they are a supervisor
 namespace Green_Light.Models
 {
     class Account

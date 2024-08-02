@@ -8,6 +8,12 @@ using Green_Light.Models;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 
+//This class handles the connections to the database.
+//Initialises the database, sets up defaults and provides
+//functions for saving/retrieving data from the database
+//The database contains tables for: conditions, drives, accounts
+//and default variables
+
 namespace Green_Light.Database_Bits
 {
     public class MasterDatabase

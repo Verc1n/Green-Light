@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Class storing the global variables
+//Contains the total day and night time, 
+//as well as the total drives completed
+
 namespace Green_Light.Models
 {
     internal class GlobalVariables

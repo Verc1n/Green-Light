@@ -9,6 +9,12 @@ using Green_Light.Models;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
+//This viewmodel class is an old, unused viewmodel for Drive Conditions
+//This was in use before the database was implemented
+//Contains the initialisation of the drive conditions
+//As well as methods and events for controlling the collection of conditions
+//for example selecting, filtering.
+
 namespace Green_Light.ViewModels
 {
     internal class OLDDriveConditionVM : INotifyPropertyChanged

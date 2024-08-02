@@ -1,5 +1,10 @@
-﻿namespace Green_Light
-{
+﻿//Codebehind for the app shell
+//Contains routing information for all of the
+//pages that the user can navigate to via the flyout
+//navigation bar
+
+namespace Green_Light
+{    
     public partial class AppShell : Shell
     {
         public AppShell()

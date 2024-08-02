@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 using Green_Light.Models;
 using SQLite;
 
+
+//This class stores information about each drive
+//Contains its time, an icon representing whether it was day/night,
+//the supervisor and whether or not it is validated
+//Contains a list of bools representing whether or not a given condition
+//has been met
 namespace Green_Light.Models
 {
     public class Drive

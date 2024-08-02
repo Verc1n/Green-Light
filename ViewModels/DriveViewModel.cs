@@ -14,6 +14,11 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Diagnostics;
 
+//Viewmodel class containing interactions for the Drive class
+//Uses the Drive Conditions viewmodel to retrieve a collection of conditions
+//Contains methods for translating between conditions and the boolean
+//values contained in the drive class indicating whether a condition
+//has been selected and managing the selection of conditions
 
 namespace Green_Light.ViewModels
 {
@@ -86,7 +91,6 @@ namespace Green_Light.ViewModels
                 }
             }
         }
-
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

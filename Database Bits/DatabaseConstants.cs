@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Green_Light.Models
 {
+    //This class contains the basic setup information for the database
+    //Referenced by the file "MasterDatabase.cs
+    //Saves the database to the app data folder on the user's device
     class DatabaseConstants
     {
         public const string strFileName = "MasterDatabase.db3";

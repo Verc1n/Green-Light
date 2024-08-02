@@ -13,6 +13,9 @@ using System.Windows.Input;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+//Viewmodel class containing interactions for the Drive Condition class
+//creates a collection of drive conditions out of the database table
+
 namespace Green_Light.ViewModels
 {
     public class DriveConditionsViewModel : INotifyPropertyChanged
