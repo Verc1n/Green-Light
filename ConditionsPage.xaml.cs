@@ -7,6 +7,8 @@ using System.Diagnostics.Contracts;
 using System.Windows.Input;
 
 //Codebehind for the conditions page
+//Contains logic for the submit button and some basic
+//functionality to load the user's drive
 
 namespace Green_Light;
 

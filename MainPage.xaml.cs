@@ -4,6 +4,9 @@ using System.Timers;
 using Green_Light.Database_Bits;
 using System.Windows.Input;
 
+//Codebehind for the main page
+//Contains functions for timing a drive,
+//and saving it to the database
 
 namespace Green_Light
 {
