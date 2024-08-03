@@ -1,6 +1,6 @@
 # Green Light
 
-Author: Ryan Hermans \m
+Author: Ryan Hermans \n
 Created on: 27/6/2024
 Released on : 4/8/2024
 
