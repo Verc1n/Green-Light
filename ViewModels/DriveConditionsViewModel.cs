@@ -28,7 +28,8 @@ namespace Green_Light.ViewModels
             clnDriveConditions = new ObservableCollection<DriveCondition>(masterdatabase.GetConditionsAsync().GetAwaiter().GetResult());
         }
 
-
+        //Just some background technical code to handle the property changed event
+        //Pretty much unused, just needed to avoid throwing an error
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -24,6 +24,9 @@ namespace Green_Light.ViewModels
 {
     public class DriveViewModel : ObservableObject
     {
+        //Setting up variables and commandsused by other pages such 
+        //as the database page and conditions page
+        //----------------------------------------
         public Drive _Drive { get; set; }
 
         static MasterDatabase masterdatabase = new MasterDatabase();
@@ -40,7 +43,6 @@ namespace Green_Light.ViewModels
         public ObservableCollection<DriveCondition> clnSelectedDriveConditions;
 
         public ObservableCollection<Drive> clnDrives { get; set; }
-
         
         public ICommand SetConditionsCommand { get; set; }
 
@@ -61,7 +63,13 @@ namespace Green_Light.ViewModels
             clnDrives = new ObservableCollection<Drive>(masterdatabase.GetDrivesAsync().GetAwaiter().GetResult());
 
         }
-        
+        //--------------------------------------------------------------------------
+
+
+        //This function translates between the 'condition' object and the booleans stored in the
+        //drive class indicating whether or not a given drive is selected
+        //Takes as an input the selected drive conditions (clnSelectedDriveConditions),
+        //which in the conditions page is bound to the collection view selected items property
         public void SetDriveConditionsAsync()
         {
             Debug.WriteLine(clnSelectedDriveConditions.Count);
@@ -77,6 +85,11 @@ namespace Green_Light.ViewModels
             }
         }
 
+        //This function works with the collection view in the conditions page
+        //It aims to ensure that the conditions selected via the user interface are
+        //always reflected in clnSelectedDriveConditions
+        //It takes clnSelectedDriveConditions as an input and is triggered by the 'selection changed'
+        //event of the collection view in the drive conditions view model
         public void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Debug.WriteLine("Selection changed");
@@ -92,6 +105,8 @@ namespace Green_Light.ViewModels
             }
         }
 
+        //Just some background technical code to handle the property changed event
+        //Pretty much unused, just needed to avoid throwing an error
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 

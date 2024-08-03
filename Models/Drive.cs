@@ -25,6 +25,8 @@ namespace Green_Light.Models
         public bool isValidated { get; set; }
         
         //Storing attached drive conditions in a database-friendly way
+        //SQL does not like storing any list of objects in 1 column, especially if they are of
+        //varying length
         public bool Parallel_Parking { get; set; }
         public bool Vertical_Parking { get; set; }
         public bool Diagonal_Parking { get; set; }

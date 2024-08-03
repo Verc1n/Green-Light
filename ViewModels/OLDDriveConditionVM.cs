@@ -15,10 +15,14 @@ using System.Windows.Input;
 //As well as methods and events for controlling the collection of conditions
 //for example selecting, filtering.
 
+//I just left it in here for reference
+
 namespace Green_Light.ViewModels
 {
     internal class OLDDriveConditionVM : INotifyPropertyChanged
     {
+        //Setting up variables and commands for accessibility by other pages/viewmodels
+        //--------------------------------------------------------
         readonly IList<DriveCondition> lstSource;
         DriveCondition cdnSelectedDriveConditionA;
         int intSelectionCount = 1;
@@ -68,7 +72,6 @@ namespace Green_Light.ViewModels
         {
             lstSource = new List<DriveCondition>();
             CreateDriveConditionCollection();
-
             cdnSelectedDriveConditionA = clnDriveConditions.Skip(3).FirstOrDefault();
             DriveConditionSelectionChanged();
 
@@ -78,6 +81,11 @@ namespace Green_Light.ViewModels
             };
         }
 
+        //---------------------------------------------------------------------------
+
+        //Function to set up the default values for the drive conditions
+        //As this viewmodel is not set up with database connection, the initialisation process
+        //will simply run every time the app is opened.
         void CreateDriveConditionCollection()
         {
             lstSource.Add(new DriveCondition
@@ -216,6 +224,8 @@ namespace Green_Light.ViewModels
             clnDriveConditions = new ObservableCollection<DriveCondition>(lstSource);
         }
 
+        //Function to update the selected drive condiitons and report how large the collection is
+        //called as an event by the selection changed property of a collection view
         void DriveConditionSelectionChanged()
         {
             strSelectedDriveConditionMessage = $"Selection {intSelectionCount} : {cdnSelectedDriveConditionB.strName}";
@@ -223,6 +233,9 @@ namespace Green_Light.ViewModels
             intSelectionCount++;
         }
 
+        //Unused function to filter the collection of conditions
+        //takes a string filter indicating the category of a condition to filter
+        //returns all conditions included in this category.
         void FilterItems(string filter)
         {
             var filteredItems = lstSource.Where(condition => condition.strCategory.ToLower().Contains(filter.ToLower()));
@@ -242,6 +255,8 @@ namespace Green_Light.ViewModels
             }
         }
 
+        //Just some background technical code to handle the property changed event
+        //Pretty much unused, just needed to avoid throwing an error
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 

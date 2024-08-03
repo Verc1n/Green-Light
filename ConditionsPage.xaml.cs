@@ -25,7 +25,10 @@ public partial class ConditionsPage : ContentPage
 		drvInProgress = drive;
 	}
 
-
+    //When the submit button is clicked, adds the selected conditions to the drive in progress
+    //Takes as an input the selected conditions in the collection view
+    //Calls the SetDriveConditions function from the Drive view model
+    //If there is no supervisor, returns.
 	public void btnSubmitClicked(object sender, EventArgs e)
 	{
         var _DriveViewModel = BindingContext as DriveViewModel;

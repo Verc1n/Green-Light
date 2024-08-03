@@ -20,7 +20,7 @@ namespace Green_Light.Database_Bits
     {
         SQLiteAsyncConnection Database;
 
-        
+        #region Initial values for drive conditions
         readonly DriveCondition[] lstConditionsSource = [
                 new DriveCondition {
                     strName = "Parallel_Parking",
@@ -155,7 +155,7 @@ namespace Green_Light.Database_Bits
                     dtmDateLastSelected = DateTime.Now,
                     intTimesSelected = 0
                 }];
-
+        #endregion
         public MasterDatabase()
         {
         }
@@ -185,7 +185,9 @@ namespace Green_Light.Database_Bits
 
         static MasterDatabase _MasterDatabase;
         //Retrieves the database
-        //Calls the Init function if the database is null
+        //Calls the Init function to create the database
+        //if the database is null
+        //outputs the database
         public async Task<MasterDatabase> GetDatabase()
         {
             if (_MasterDatabase == null)
