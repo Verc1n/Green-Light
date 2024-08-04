@@ -23,8 +23,7 @@ namespace Green_Light
             InitializeComponent();
             //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             tspPausedTime = TimeSpan.Zero;
-            masterDatabase = new MasterDatabase();
- 
+            masterDatabase = new MasterDatabase(); 
         }
 
         //This function is called by the timer object every second
