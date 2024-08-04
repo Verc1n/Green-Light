@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Green_Light.Models
 {
-    internal class GlobalVariables
+    public class GlobalVariables
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

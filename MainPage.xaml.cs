@@ -17,13 +17,16 @@ namespace Green_Light
         TimeSpan tspPausedTime = TimeSpan.Zero;
         DateTime dtmPauseStart;
         MasterDatabase masterDatabase { get; set; }
+        GlobalVariables globalVariables { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
-            //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             tspPausedTime = TimeSpan.Zero;
-            masterDatabase = new MasterDatabase(); 
+            masterDatabase = new MasterDatabase();
+            globalVariables = masterDatabase.GetGlobalVariablesAsync().GetAwaiter().GetResult();
+            lblDayHours.Text=string.Format("{0} Hours", globalVariables.tspTotalDayTime.Hours);
+            lblNightHours.Text=string.Format("{0} Hours", globalVariables.tspTotalNightTime.Hours);
         }
 
         //This function is called by the timer object every second
@@ -71,17 +74,21 @@ namespace Green_Light
             lblRecordingIndicator.IsVisible = false;
             lblTimer.IsVisible = false;
             lblTimer.Text = "0:00:00";
-            Drive drvInProgressDrive = new Drive { tspDriveTime = (DateTime.Now - dtmStartTime) - tspPausedTime, dtmDriveDateTime=DateTime.Now };
+            TimeSpan tspElapsedTime = (DateTime.Now - dtmStartTime) - tspPausedTime;
+            Drive drvInProgressDrive = new Drive { tspDriveTime = tspElapsedTime, dtmDriveDateTime=DateTime.Now };
             if (drvInProgressDrive.dtmDriveDateTime.Hour >= 8 && drvInProgressDrive.dtmDriveDateTime.Hour <= 20)
             {
                 drvInProgressDrive.strImageUrl = "sun.png";
+                globalVariables.tspTotalDayTime += tspElapsedTime;
             }
             else
             {
                 drvInProgressDrive.strImageUrl = "moon.png";
+                globalVariables.tspTotalNightTime+= tspElapsedTime;
             }
+            masterDatabase.UpdateGlobalVariablesAsync(globalVariables);
             masterDatabase.SaveDriveAsync(drvInProgressDrive);
-            //Navigation.PushAsync(new LoginPage(drvInProgressDrive));
+            Navigation.PushAsync(new LoginPage(drvInProgressDrive));
         }
 
         //This functionality is controlled by a switch case

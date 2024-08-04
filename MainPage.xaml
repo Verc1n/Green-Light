@@ -9,9 +9,10 @@
         ColumnSpacing="5"
         Padding="5">
 
-        <Label Grid.Row="0"
+        <Label x:Name="lblDayHours" 
+            Grid.Row="0"
             Grid.ColumnSpan="4"
-            Text="107 hours"
+            Text="0 Hours"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"
             FontSize="40"/>
@@ -23,9 +24,10 @@
             HorizontalOptions="Fill"
             VerticalOptions="Center"/>
 
-        <Label Grid.Row="1"
+        <Label x:Name="lblNightHours" 
+            Grid.Row="1"
             Grid.ColumnSpan="4"
-            Text="12 hours"
+            Text="0 Hours"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"
             FontSize="40"/>

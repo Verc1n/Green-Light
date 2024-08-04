@@ -166,14 +166,17 @@ namespace Green_Light.Database_Bits
         //Ignored if the database is already initialised
         public async Task Init()
         {
-            if (Database is not null)
-            {
+            if (Database is not null)            
                 return;
-            }
+
             Database = new SQLiteAsyncConnection(DatabaseConstants.DatabasePath, DatabaseConstants.Flags);
             Database.CreateTablesAsync<DriveCondition, Account, Drive, GlobalVariables>().Wait();
 
-            int count = Database.Table<DriveCondition>().CountAsync().GetAwaiter().GetResult();
+            int count = Database.Table<GlobalVariables>().CountAsync().GetAwaiter().GetResult();
+            if (count == 0)
+                Database.InsertAsync(new GlobalVariables {intNumTotalDrives=0, tspTotalDayTime=TimeSpan.Zero, tspTotalNightTime=TimeSpan.Zero }).GetAwaiter().GetResult();
+
+            count = Database.Table<DriveCondition>().CountAsync().GetAwaiter().GetResult();
             if(count==0)
             {
                 foreach (DriveCondition condition in lstConditionsSource)
@@ -234,6 +237,17 @@ namespace Green_Light.Database_Bits
         public async Task<int> SaveConditionAsync(DriveCondition condition)
         {
             return Database.UpdateAsync(condition).GetAwaiter().GetResult();
-        }                          
+        }
+        
+        public async Task<GlobalVariables> GetGlobalVariablesAsync()
+        {
+            Init();
+            return Database.Table<GlobalVariables>().FirstOrDefaultAsync().GetAwaiter().GetResult();
+        }
+
+        public async Task<int> UpdateGlobalVariablesAsync(GlobalVariables globalVariables)
+        {
+            return Database.UpdateAsync(globalVariables).GetAwaiter().GetResult();
+        }
     }
 }

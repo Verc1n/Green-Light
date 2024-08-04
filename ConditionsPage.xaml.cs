@@ -16,11 +16,11 @@ public partial class ConditionsPage : ContentPage
 {
 	Drive drvInProgress;
 
-    public ConditionsPage(Drive drive)
-	{
-		MasterDatabase masterDatabase = new MasterDatabase();
-		InitializeComponent();
-		lblDriveTime.Text = string.Format("{0} hours {1} minutes", (int)drive.tspDriveTime.TotalHours, (int)drive.tspDriveTime.TotalMinutes);
+    public ConditionsPage(Drive? drive)
+	{        
+        InitializeComponent();
+        MasterDatabase masterDatabase = new MasterDatabase();
+        lblDriveTime.Text = string.Format("{0} hours {1} minutes", (int)drive.tspDriveTime.TotalHours, (int)drive.tspDriveTime.TotalMinutes);
         BindingContext = new DriveViewModel(masterDatabase);
 		drvInProgress = drive;
 	}
