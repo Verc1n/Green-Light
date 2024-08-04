@@ -21,7 +21,7 @@ public partial class LoginPage : ContentPage
 	//Otherwise, it displays an appropriate error message
     public void btnLoginClicked(object sender, EventArgs e)
 	{
-		if (ntyPasswordEntry.Text ==null||ntyUsernameEntry.Text==null)
+		if (ntyPasswordEntry.Text == null||ntyUsernameEntry.Text == null)
 			DisplayAlert("Failed", "You must input a username and password.", "Ok");
         else if (ntyPasswordEntry.Text != "admin"&&ntyUsernameEntry.Text != "admin")
             DisplayAlert("Failed", "Incorrect Username and Password", "Ok");
