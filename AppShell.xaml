@@ -56,5 +56,4 @@
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
 
-
 </Shell>
