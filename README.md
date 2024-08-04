@@ -50,7 +50,9 @@ Of these, efficiency criteria 2 and 3 and effectiveness criteria 2,3,6 and 9 had
 4.	The solution has appropriate error messages when a function is not working as intended, or when the user has made an invalid input.<br/>
 5.	The solution should place restrictions on the user where possible so as to ensure that they cannot make an invalid input.<br/>
 6.	The recommended driving conditions should be relevant to the user.<br/>
-7. The solution should allow users to start, pause and resume a timer to track their drive. <br/><br/>
+7. The solution should require users to log in before accessing the app.
+8. The solution should correctly add up the user's total day and night hours.
+9. The solution should allow users to start, pause and resume a timer to track their drive. <br/><br/>
 
 **Testing Techniques**<br/>
 To formally test the solution, I constructed an excel table with the columns: <br/>
