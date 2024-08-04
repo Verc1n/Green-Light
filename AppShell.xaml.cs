@@ -4,6 +4,7 @@
 //navigation bar
 
 using Green_Light.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Green_Light
 {    
@@ -15,7 +16,7 @@ namespace Green_Light
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
             Routing.RegisterRoute(nameof(SummaryPage), typeof(SummaryPage));
-            Routing.RegisterRoute(nameof(DatabasePage), typeof(DatabasePage));
+            Routing.RegisterRoute(nameof(DatabasePage), typeof(DatabasePage));            
         }
     }
 }

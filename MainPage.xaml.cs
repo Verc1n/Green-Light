@@ -61,8 +61,7 @@ namespace Green_Light
         //Basically opposite of start button - returns the Main page to its initial state
         //Stops the timer
         //Saves the drive to the database
-        //Can also push the user to the next page, likely either login or conditions,
-        //but this functionality is not currently implemented
+        //Pushes the user to the conditions page
         private void OnStopButtonClicked(object sender, EventArgs e)
         {
             tmrDriveTimer.Enabled=false;
@@ -86,9 +85,10 @@ namespace Green_Light
                 drvInProgressDrive.strImageUrl = "moon.png";
                 globalVariables.tspTotalNightTime+= tspElapsedTime;
             }
+            globalVariables.intNumTotalDrives++;
             masterDatabase.UpdateGlobalVariablesAsync(globalVariables);
             masterDatabase.SaveDriveAsync(drvInProgressDrive);
-            Navigation.PushAsync(new LoginPage(drvInProgressDrive));
+            Navigation.PushAsync(new ConditionsPage(drvInProgressDrive));
         }
 
         //This functionality is controlled by a switch case

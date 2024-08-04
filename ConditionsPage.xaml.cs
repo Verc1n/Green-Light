@@ -9,6 +9,7 @@ using System.Windows.Input;
 //Codebehind for the conditions page
 //Contains logic for the submit button and some basic
 //functionality to load the user's drive
+//currently non-functional
 
 namespace Green_Light;
 
@@ -29,6 +30,7 @@ public partial class ConditionsPage : ContentPage
     //Takes as an input the selected conditions in the collection view
     //Calls the SetDriveConditions function from the Drive view model
     //If there is no supervisor, returns.
+    //Currently non-functional, just returns to main page
 	public void btnSubmitClicked(object sender, EventArgs e)
 	{
         var _DriveViewModel = BindingContext as DriveViewModel;
@@ -36,14 +38,15 @@ public partial class ConditionsPage : ContentPage
         {          
             if (pkrSupervisor.SelectedItem == null)
             {
-                Debug.WriteLine("supervisor is null");
+                DisplayAlert("Alert", "No supervisor was selected", "Ok");
                 return;
             }
             else
             {
-                Debug.WriteLine(drvInProgress.No_Rain);
-                _DriveViewModel.SetDriveConditionsAsync();
-                Debug.WriteLine(drvInProgress.No_Rain);
+                Navigation.PushAsync(new MainPage());
+                //Debug.WriteLine(drvInProgress.No_Rain);
+                //_DriveViewModel.SetDriveConditionsAsync();
+                //Debug.WriteLine(drvInProgress.No_Rain);
             }
         }
         else
@@ -51,6 +54,4 @@ public partial class ConditionsPage : ContentPage
             Debug.WriteLine("null drivemodel");
         }
 	}
-
-
 }

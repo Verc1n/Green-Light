@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:Green_Light"
     Title="Green_Light"
     FlyoutWidth="200"
+    x:Name="Flyout"
     Shell.BackgroundColor="DarkGreen">
 
     <Shell.TitleView>

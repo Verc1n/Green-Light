@@ -3,18 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Green_Light.LoginPage">
     
-    <VerticalStackLayout Padding="20">
-        
+    <VerticalStackLayout Padding="20"
+                         Margin="20">
+
         <Entry x:Name="ntyUsernameEntry"
                Placeholder="Username"
                PlaceholderColor="DimGrey"
-               FontSize="30" 
+               FontSize="30"
                HorizontalOptions="Center"/>
 
         <Entry x:Name="ntyPasswordEntry"
                Placeholder="Password"
                PlaceholderColor="DimGrey"
                IsPassword="True"
+               FontSize="30"               
                HorizontalOptions="Center"/>
         
         <Button x:Name="btnLogin"
