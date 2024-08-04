@@ -5,8 +5,9 @@ Created on: 27/6/2024 <br/>
 Released on: 4/8/2024 <br/> <br/>
 
 This program is an app to allow learner drivers to record their drives and track their progress. <br/>
-It allows them to view their previously recorded drives. <br/>
+It allows them to view their previously recorded drives. <br/><br/>
 
+**Modification of Design**<br/>
 The original project plan was far too ambitious for a variety of reasons, and needed to be cut down significantly.
 Two major sources of problems were that this was the first project of any sort of scale I had attempted, and thus did not really have a good grasp of how long things took, and that I had decided to use a new framework for development, meaning a large portion of the development time was dedicated to learning fundamental aspects of the framework and troubleshooting features. This factor also contributed to the difficulty in making an accurate plan with a reasonable scope. <br/> <br/>
 
@@ -49,5 +50,14 @@ Of these, efficiency criteria 2 and 3 and effectiveness criteria 2,3,6 and 9 had
 4.	The solution has appropriate error messages when a function is not working as intended, or when the user has made an invalid input.<br/>
 5.	The solution should place restrictions on the user where possible so as to ensure that they cannot make an invalid input.<br/>
 6.	The recommended driving conditions should be relevant to the user.<br/>
-7. The solution should allow users to start, pause and resume a timer to track their drive. <br/>
+7. The solution should allow users to start, pause and resume a timer to track their drive. <br/><br/>
 
+**Testing Techniques**<br/>
+To formally test the solution, I constructed an excel table with the columns: <br/>
+What is to be Tested<br/>
+Test Data Input<br/>
+Expected Result<br/>
+Actual Result<br/>
+Changes Made<br/>
+Other Notes<br/>
+These tests tried different paths that the user could take through the solution, as well as the different inputs they could make. As a general design principle, in a mobile app it is preferable to not require users to type wherever possible, as this is a slow action, and as such the majority of possible text input boxes were replaced with components such as drop downs and buttons. As a consequence, the user's possible inputs are actually fairly limited, and thus require little additional validation, and consequently little additional testing for that validation.
